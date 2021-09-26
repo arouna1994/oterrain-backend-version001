@@ -1,0 +1,127 @@
+# o-terrain
+
+Application de réservation...
+
+- Pour lancer ce projet il faut les outils suivant :
+- 1.IDE : eclispse pour JEE de preference en configurant LOMBOK
+- 2.MARVEN
+- 3.JDK +8 mais de preference JDK8
+- 4.JDBC de preference POSTGRESS
+- 5.AJOUTER CE TEXTE CI DESSOUS DANS LE FICHIER application.properties
+- 
+- ##Créer un fichier application-dev.prperties dans resources et mettre
+- spring.datasource.driver-class-name=org.postgresql.Driver
+- spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+- spring.datasource.url=jdbc:postgresql://localhost:5432/ot_db
+- spring.datasource.username=##################
+- spring.datasource.password=##################
+- spring.jpa.hibernate.ddl-auto=update
+- spring.jpa.show-sql=true
+- spring.banner.location=classpath:ot-banner.txt
+- 
+- #properties for sending mails to users
+- spring.mail.host=smtp.gmail.com
+- spring.mail.port=587
+- spring.mail.username=########################
+- spring.mail.password=######################
+- # Other smtp properties
+- spring.mail.properties.mail.smtp.auth=true
+- spring.mail.properties.mail.smtp.connectiontimeout=5000
+- spring.mail.properties.mail.smtp.timeout=5000
+- spring.mail.properties.mail.smtp.writetimeout=5000
+- # TLS port 587
+- spring.mail.properties.mail.smtp.starttls.enable=true
+- jwt.secret=javainuse
+- springdoc.swagger-ui.path=/swagger-ui-custom.html
+- springdoc.swagger-ui.operationsSorter=method
+- 
+- #properties logging config
+- logging.level.root=INFO
+- logging.file=C:/mylog.log
+- 
+- NB: Il faut personaliser les champs en ###########
+- 
+- 6.AJOUTER CES DEPENDENCES DANS VOTRE FICHIER pom.xml
+- 
+-         <dependency>
+- 			<groupId>org.springframework.boot</groupId>
+- 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+- 		</dependency>
+- 		
+- 		<dependency>
+-         <groupId>org.springframework.boot</groupId>
+-         <artifactId>spring-boot-starter-tomcat</artifactId>
+-        </dependency>
+-        
+- 	    <dependency>
+-             <groupId>com.fasterxml.jackson.core</groupId>
+-             <artifactId>jackson-databind</artifactId>
+-         </dependency>
+- 		<dependency>
+- 		    <groupId>org.springdoc</groupId>
+- 		    <artifactId>springdoc-openapi-ui</artifactId>
+- 		    <version>1.5.2</version>
+- 		</dependency>
+- 		<dependency>
+- 			<groupId>org.springframework.boot</groupId>
+- 			<artifactId>spring-boot-starter-hateoas</artifactId>
+- 		</dependency>
+- 		<dependency>
+- 			<groupId>org.springframework.boot</groupId>
+- 			<artifactId>spring-boot-starter-jersey</artifactId>
+- 		</dependency>
+-                 <dependency>
+-                    <groupId>org.modelmapper</groupId>
+-                    <artifactId>modelmapper</artifactId>
+-                    <version>2.3.5</version>
+-                </dependency>
+- 		
+- 		<dependency>
+- 			<groupId>org.springframework.boot</groupId>
+- 			<artifactId>spring-boot-starter-mail</artifactId>
+- 		</dependency>
+- 		<dependency>
+- 			<groupId>org.springframework.boot</groupId>
+- 			<artifactId>spring-boot-starter-security</artifactId>
+- 		</dependency>
+- 		<dependency>
+- 			<groupId>org.springframework.boot</groupId>
+- 			<artifactId>spring-boot-starter-validation</artifactId>
+- 		</dependency>
+- 		<dependency>
+- 			<groupId>org.springframework.boot</groupId>
+- 			<artifactId>spring-boot-starter-web</artifactId>
+- 		</dependency>
+- 
+- 		<dependency>
+- 			<groupId>org.springframework.boot</groupId>
+- 			<artifactId>spring-boot-devtools</artifactId>
+- 			<scope>runtime</scope>
+- 			<optional>true</optional>
+- 		</dependency>
+- 		<dependency>
+- 			<groupId>org.postgresql</groupId>
+- 			<artifactId>postgresql</artifactId>
+- 			<scope>runtime</scope>
+- 		</dependency>
+- 		<dependency>
+- 			<groupId>org.springframework.boot</groupId>
+- 			<artifactId>spring-boot-configuration-processor</artifactId>
+- 			<optional>true</optional>
+- 		</dependency>
+- 		<dependency>
+- 			<groupId>org.projectlombok</groupId>
+- 			<artifactId>lombok</artifactId>
+- 			<optional>true</optional>
+- 		</dependency>
+- 		<dependency>
+- 			<groupId>org.springframework.boot</groupId>
+- 			<artifactId>spring-boot-starter-test</artifactId>
+- 			<scope>test</scope>
+- 		</dependency>
+- 	<dependency>
+- 		<groupId>io.jsonwebtoken</groupId>
+- 		<artifactId>jjwt</artifactId>
+- 		<version>0.9.1</version>
+- 	</dependency>
+
